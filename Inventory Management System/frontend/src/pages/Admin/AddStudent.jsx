@@ -40,16 +40,6 @@ function AddStudent(props) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  /*const handleFileInputChange = async (event) => {
-    const file = event.target.files[0];
-
-    const data = await uploadImageToCloudinary(file);
-    setPreviewURL(data.url);
-    setSelectedFile(data.url);
-    setFormData({ ...formData, photo: data.url });
-    //later
-  };*/
-
   const [errors, setErrors] = useState("");
 
   const validateForm = () => {
@@ -111,24 +101,6 @@ function AddStudent(props) {
 
   const { openPopup, setOpenPopup } = props;
 
-  /*let menuRef = useRef();
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setOpenPopup(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });*/
-  /*const [role, setRole] = React.useState(""); // State to manage the selected role
-
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-  };*/
   return (
     <Dialog open={openPopup} onSubmit={submitHandler}>
       <div style={{ marginLeft: "auto", margin: "5px 0px 0px 300px" }}>
