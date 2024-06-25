@@ -1,7 +1,6 @@
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import TechOfficer from "../pages/TechOfficer/TechOfficer";
-import Admin from "../pages/Admin/Admin";
 import CategoryList from "../pages/TechOfficer/CategoryList";
 import ItemList from "../pages/TechOfficer/ItemList";
 import { Routes, Route } from "react-router-dom";
@@ -49,12 +48,12 @@ const Routers = () => {
         path="/admin"
         element={
           <ProtectedRoute allowedRoles={"admin"}>
-            <Admin />
+            <AdminHome />
           </ProtectedRoute>
         }
       />
       <Route
-        path="/admin/techOfficer"
+        path="/techOfficer"
         element={
           <ProtectedRoute allowedRoles={"admin"}>
             <TOData />
@@ -62,7 +61,7 @@ const Routers = () => {
         }
       />
       <Route
-        path="/admin/labInstructor"
+        path="/labInstructor"
         element={
           <ProtectedRoute allowedRoles={"admin"}>
             <LabInstructorData />

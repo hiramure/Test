@@ -14,7 +14,7 @@
   }
 
   .btn {
-    @apply bg-primaryColor py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px];
+    @apply bg-primaryColor py-[15px] px-[35px] rounded-[50px] text-white font-[450] mt-[38px];
   }
 
   .heading {
@@ -23,6 +23,17 @@
 
   .text_para {
     @apply text-[18px] leading-[30px] font-[400] text-textolor mt-[18px];
+  }
+  .header {
+    @apply bg-[url('./assets/images/header.jpg')] bg-no-repeat bg-center bg-cover w-full h-[150px] leading-[100px];
+  }
+  .form__label {
+    @apply text-textColor font-semibold text-[16px] leading-7 mb-2;
+  }
+  .form__input {
+    @apply w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none 
+    focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor
+    cursor-pointer rounded-md;
   }
 }
 
@@ -43,30 +54,4 @@
   .text_para {
     @apply text-[16px] leading-7 mt-3;
   }
-  .underline {
-    text-decoration: underline;
-  }
-}
-
-.dropdownmenu {
-  position: absolute;
-  top: 4.5 rem;
-  right: 1.5rem;
-  width: 120 px;
-  padding: 15px;
-  border-radius: 15px;
-  background-color: wheat;
-  border: 1px solid gray;
-}
-.dropdownmenu::before {
-  content: "";
-  position: absolute;
-  top: -0.7rem;
-  right: 1.1rem;
-  width: 20px;
-  height: 20px;
-  transform: rotate(45deg);
-  background-color: white;
-  border-left: 1px solid gray;
-  border-top: 1px solid gray;
 }

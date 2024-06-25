@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
-import { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 
 const initialState = {
   user:
-    localStorage.getItem("user") !== undefined
+    localStorage.getItem("user") !== null
       ? JSON.parse(localStorage.getItem("user"))
       : null,
   role: localStorage.getItem("role") || null,
@@ -32,19 +31,21 @@ const authReducer = (state, action) => {
         role: null,
         token: null,
       };
-
     default:
       return state;
   }
 };
+
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
-  // user will stay login even the page refreshed
+
+  // user will stay logged in even if the page is refreshed
   useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(state.user));
+    localStorage.setItem("user", JSON.stringify(state));
     localStorage.setItem("token", state.token);
     localStorage.setItem("role", state.role);
   }, [state]);
+
   return (
     <authContext.Provider
       value={{

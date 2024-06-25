@@ -10,6 +10,7 @@ import Error from "../../components/Error/Error";
 
 const InstructorAccount = () => {
   const { dispatch } = useContext(authContext);
+  //console.log(user);
   const {
     data: instructorData,
     loading,

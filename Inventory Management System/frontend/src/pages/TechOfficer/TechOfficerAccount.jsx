@@ -18,7 +18,7 @@ const TechOfficerAccount = () => {
     data: userData,
     loading,
     error,
-  } = useGetProfile(`${BASE_URL}/techOfiicer/profile/me`);
+  } = useGetProfile(`${BASE_URL}/techOfficer/profile/me`);
   console.log(userData, "userdata");
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
