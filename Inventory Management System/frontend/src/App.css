@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.sticky_header {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: white;
+  box-shadow: 3px 3px -8px 3px #ddd;
+}
+.dropdownmenu {
+  position: absolute;
+  top: 4.5 rem;
+  right: 1.5rem;
+  width: 200 px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgb(248, 249, 251);
+  border: 1px solid transparent;
+}
+.dropdownmenu::before {
+  content: "";
+  position: absolute;
+  top: -0.7rem;
+  right: 1.1rem;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: white;
+  border-left: 1px solid rgb(246, 244, 244);
+  border-top: 1px solid rgb(251, 245, 245);
+}
+.menu-list li {
+  height: 30px; /* Adjust the height as needed */
+  line-height: 30px; /* Center the text vertically */
+  padding: 5px 10px; /* Adjust padding as needed */
+}
+.table-wrapper {
+  width: 100;
+}
+
+.table {
+  display: block;
+  overflow: hidden;
+  table-layout: auto; /*can scroll table horizontally if needed*/
+  border-collapse: collapse;
+  /*box-shadow: 10px 0px 10px #ccc;*/
+  border-radius: 10px;
+  white-space: nowrap;
+  max-width: 100%;
+  margin: auto;
+}
+
+.table thead {
+  background-color: #ccc;
+  color: #222;
+}
+.table th,
+.table td {
+  padding: 0.8rem;
+}
+
+.table td {
+  border-top: 0.5px solid #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table tbody tr:hover {
+  background-color: #eee;
+}
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.actions svg {
+  cursor: pointer;
+}
+
+.delete-btn {
+  color: #e10d05;
+}
+
+.edit-popup {
+  z-index: 99999;
+}
+.error {
+  background-color: #f8d7da;
+  color: #df4759;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+.list-group a:hover {
+  background-color: #e6ad29;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #00000084;
+    display: none;
+  }
+
+  .menu {
+    width: 15rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 200;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+  }
+
+  .show__menu {
+    display: block;
+  }
+}
