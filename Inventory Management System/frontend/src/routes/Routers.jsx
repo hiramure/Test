@@ -21,6 +21,9 @@ import ItemByCategory from "../components/ItemsByCategory/ItemByCategory";
 import SearchComponent from "../components/SearchComponent/SearchComponent.jsx";
 import ItemsByCategory from "../pages/TechOfficer/ItemsByCategory";
 import Item from "../pages/TechOfficer/Item";
+import AdminHome from "../pages/Admin/AdminHome";
+import StudentData from "../pages/Admin/StudentData";
+import Dashboard from "../pages/Admin/Dashboard";
 
 const Routers = () => {
   return (
@@ -61,6 +64,14 @@ const Routers = () => {
         }
       />
       <Route
+        path="/student"
+        element={
+          <ProtectedRoute allowedRoles={"admin"}>
+            <StudentData />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/labInstructor"
         element={
           <ProtectedRoute allowedRoles={"admin"}>
@@ -89,6 +100,14 @@ const Routers = () => {
         element={
           <ProtectedRoute allowedRoles={["admin"]}>
             <AdminAccount />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/profile"
+        element={
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <Dashboard />
           </ProtectedRoute>
         }
       />
