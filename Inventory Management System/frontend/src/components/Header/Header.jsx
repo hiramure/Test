@@ -51,9 +51,9 @@ const Header = () => {
             ref={menuRef}
             onClick={toggleMenu}
           >
-            {token && user ? (
+            {token && user != null ? (
               <div>
-                <h1>{user.firstName}</h1>
+                <h1>{user.lastName}</h1>
 
                 <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
                   <img

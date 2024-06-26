@@ -25,7 +25,7 @@
     @apply text-[18px] leading-[30px] font-[400] text-textolor mt-[18px];
   }
   .header {
-    @apply bg-[url('./assets/images/header.jpg')] bg-no-repeat bg-center bg-cover w-full h-[150px] leading-[100px];
+    @apply bg-[url('./assets/images/header3.png')] bg-no-repeat bg-center bg-cover w-full h-[150px] leading-[100px];
   }
   .form__label {
     @apply text-textColor font-semibold text-[16px] leading-7 mb-2;

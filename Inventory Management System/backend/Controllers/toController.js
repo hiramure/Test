@@ -64,7 +64,7 @@ export const getAllTechOfficer = async (req, res) => {
 };
 
 export const getTechOfficerProfile = async (req, res) => {
-  const techOfficerId = req.userId;
+  const techOfficerId = req.userID;
 
   try {
     const techOfficer = await TechOfficer.findById(techOfficerId);

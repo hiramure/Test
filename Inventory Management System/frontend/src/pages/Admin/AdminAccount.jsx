@@ -1,14 +1,12 @@
 import { useContext, useState } from "react";
 import { authContext } from "./../../context/AuthContext";
 import userImg from "../../assets/images/user.png";
-
 import Loading from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
-
 import AdminProfile from "./AdminProfile";
 import { Navigate } from "react-router-dom";
 import useGetProfile from "../../hooks/usefetchdata";
-import { BASE_URL, token } from "../../config";
+import { BASE_URL } from "../../config";
 
 const AdminAccount = () => {
   const { data, loading, error } = useGetProfile(
