@@ -69,7 +69,7 @@ const Items = () => {
                           key={i._id}
                           className="whitespace-nowrap px-6 py-4 "
                         >
-                          {i.category}
+                          {i.categoryTest.name}
                         </td>
                         <td
                           key={i._id}

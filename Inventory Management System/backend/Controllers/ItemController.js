@@ -115,3 +115,25 @@ export const getItemsByCategory = asyncHandler(async (req, res) => {
     res.status(500).json({ error: "Error while getting items" });
   }
 });
+
+export const searchItem = asyncHandler(async (req, res) => {
+  try {
+    const { query } = req.query;
+    let item;
+
+    if (query) {
+      item = await Item.find({
+        name: { $regex: query, $options: "i" },
+      });
+    } else {
+      item = await Item.find().sort({ name: 1 });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Category found",
+      data: category,
+    });
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
+});

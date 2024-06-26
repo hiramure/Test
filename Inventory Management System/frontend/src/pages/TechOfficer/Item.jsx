@@ -88,23 +88,7 @@ export default function ItemListView() {
           />
         </ListItem>
         <Divider />
-        <ListItem alignItems="flex-start">
-          <ListItemText
-            primary="Handling Method "
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                ></Typography>
-                {item.handlingMethod}
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-        <Divider />
+
         <ListItem alignItems="flex-start">
           <ListItemText
             primary="Available"

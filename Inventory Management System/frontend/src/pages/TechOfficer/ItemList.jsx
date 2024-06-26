@@ -167,7 +167,14 @@ const ItemList = () => {
                 <button
                   type="button"
                   className="btn btn-outline-warning "
-                  style={{ position: "absolute", top: 150, right: 15 }}
+                  style={{
+                    position: "absolute",
+                    top: 200,
+                    right: 170,
+                    margin: "5px",
+                    borderRadius: "10px",
+                    padding: "8px",
+                  }}
                   onClick={() => setOpenPopup(true)}
                 >
                   Add Item

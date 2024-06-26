@@ -36,7 +36,7 @@ export default function ItemListView() {
         sx={{
           position: "absolute",
           top: 200,
-          right: 15,
+          right: 150,
           borderRadius: "6px",
           padding: "10px",
           color: "black",
@@ -76,7 +76,7 @@ export default function ItemListView() {
           />
         </ListItem>
         <Divider />
-        <ListItem alignItems="flex-start">
+        {/* <ListItem alignItems="flex-start">
           <ListItemText
             primary="Category "
             secondary={
@@ -87,12 +87,12 @@ export default function ItemListView() {
                   variant="body2"
                   color="text.primary"
                 ></Typography>
-                {item.category}
+                {item.categoryTest}
               </React.Fragment>
             }
           />
         </ListItem>
-        <Divider />
+        <Divider /> */}
         <ListItem alignItems="flex-start">
           <ListItemText
             primary="Description"
@@ -110,23 +110,7 @@ export default function ItemListView() {
           />
         </ListItem>
         <Divider />
-        <ListItem alignItems="flex-start">
-          <ListItemText
-            primary="Handling Method "
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                ></Typography>
-                {item.handlingMethod}
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-        <Divider />
+
         <ListItem alignItems="flex-start">
           <ListItemText
             primary="Available"
