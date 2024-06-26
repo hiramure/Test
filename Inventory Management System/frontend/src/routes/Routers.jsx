@@ -1,4 +1,4 @@
-import Home from "../pages/Home";
+import Home from "../pages/Home.jsx";
 import Login from "../pages/Login";
 import TechOfficer from "../pages/TechOfficer/TechOfficer";
 import CategoryList from "../pages/TechOfficer/CategoryList";
@@ -28,7 +28,7 @@ import Dashboard from "../pages/Admin/Dashboard";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route

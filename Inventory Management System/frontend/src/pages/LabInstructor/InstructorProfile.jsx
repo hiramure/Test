@@ -5,7 +5,7 @@ import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
 
-const TOProfile = ({ user }) => {
+const InstructorProfile = ({ user }) => {
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -20,14 +20,16 @@ const TOProfile = ({ user }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFormData({
-      firstName: user.firstName || "",
-      lastName: user.lastName || "",
-      username: user.username || "",
-      email: user.email || "",
-      password: user.password || "",
-      phone: user.phone || "",
-    });
+    if (user) {
+      setFormData({
+        firstName: user.firstName || "",
+        lastName: user.lastName || "",
+        username: user.username || "",
+        email: user.email || "",
+        password: user.password || "",
+        phone: user.phone || "",
+      });
+    }
   }, [user]);
 
   const handleInputChange = (e) => {
@@ -39,7 +41,7 @@ const TOProfile = ({ user }) => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${BASE_URL}/techOfficer/${user._id}`, {
+      const res = await fetch(`${BASE_URL}/labInstructor/${user._id}`, {
         method: "put",
         headers: {
           "Content-type": "application/json",
@@ -57,15 +59,29 @@ const TOProfile = ({ user }) => {
 
       setLoading(false);
       toast.success(message);
-      navigate("/techOfficer/profile/me");
+      navigate("/labInstructor/profile/me");
     } catch (err) {
       toast.error(err.message || "An error occurred");
       setLoading(false);
     }
   };
+
   return (
     <div className="mt-10">
       <form onSubmit={submitHandler}>
+        <div className="mb-5">
+          <input
+            type="text"
+            placeholder="User name"
+            name="username"
+            value={formData.username}
+            onChange={handleInputChange}
+            className="w-full pr-4 border-b border-solid border-[#0066ff61] focus:outline-none 
+                  focus:border-b-primaryColor text-[16px] leading-7 text-headingColor 
+                  placeholder:text-textColor cursor-pointer"
+            required
+          />
+        </div>
         <div className="mb-5">
           <input
             type="text"
@@ -146,4 +162,4 @@ const TOProfile = ({ user }) => {
   );
 };
 
-export default TOProfile;
+export default InstructorProfile;

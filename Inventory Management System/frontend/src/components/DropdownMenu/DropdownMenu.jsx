@@ -1,29 +1,39 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../context/AuthContext";
+import { FaHome, FaUser, FaBackward } from "react-icons/fa";
+import { IoMdLogOut } from "react-icons/io";
 
 const DropdownMenu = () => {
-  const { role } = useContext(authContext);
-  const { dispatch } = useContext(authContext);
+  const { role, dispatch } = useContext(authContext);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
-  const navigate = useNavigate();
+
   return (
     <div className="dropdownmenu">
       <ul className="menu-list">
         <li onClick={() => navigate(`/${role}/profile/me`)}>
-          <span className="menu-icon">👤</span> Profile
+          <div className="menu-icon">
+            <FaUser style={{ marginRight: "0px" }} /> Profile
+          </div>
         </li>
-        <li onClick={() => navigate(`/${role}/profile`)}>
-          <span className="menu-icon">🏠</span> Home
+        <li onClick={() => navigate(`/home`)}>
+          <div className="menu-icon">
+            <FaHome style={{ marginRight: "5px" }} /> Home
+          </div>
         </li>
-        <li onClick={() => navigate(`/${role}`)}>
-          <span className="menu-icon">⬅️</span> Back
+        <li onClick={() => navigate(-1)}>
+          <div className="menu-icon">
+            <FaBackward style={{ marginRight: "5px" }} /> Back
+          </div>
         </li>
         <li onClick={handleLogout}>
-          <span className="menu-icon">🔒</span> Logout
+          <div className="menu-icon">
+            <IoMdLogOut style={{ marginRight: "5px" }} /> Logout
+          </div>
         </li>
       </ul>
     </div>

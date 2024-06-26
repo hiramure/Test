@@ -1,25 +1,19 @@
 import { useContext, useState } from "react";
 import { authContext } from "./../../context/AuthContext";
 import userImg from "../../assets/images/user.png";
-
 import useGetProfile from "../../hooks/usefetchdata";
 import { BASE_URL } from "../../config";
-
 import Loading from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
-
 import TOProfile from "./TOProfile";
 import { Navigate } from "react-router-dom";
 
 const TechOfficerAccount = () => {
   const { dispatch } = useContext(authContext);
   const [tab, setTab] = useState("settings");
-  const {
-    data: userData,
-    loading,
-    error,
-  } = useGetProfile(`${BASE_URL}/techOfficer/profile/me`);
-  console.log(userData, "userdata");
+  const { data, loading, error } = useGetProfile(
+    `${BASE_URL}/techOfficer/profile/me`
+  );
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -42,7 +36,7 @@ const TechOfficerAccount = () => {
               </div>
               <div className="text-center mt-4">
                 <h3 className="text-[18px] leading-[30px] text-headingColor font-bold">
-                  {userData.username}
+                  {data.username}
                 </h3>
               </div>
               <div className="mt-[50 px] md:mt-[100px]">
@@ -77,7 +71,7 @@ const TechOfficerAccount = () => {
               </div>
 
               {tab === "exit" && <Navigate to="/techOfficer" />}
-              {tab === "settings" && <TOProfile user={userData} />}
+              {tab === "settings" && <TOProfile user={data} />}
             </div>
           </div>
         )}

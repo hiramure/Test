@@ -78,7 +78,7 @@ export const getAllInstuctor = async (req, res) => {
 };
 
 export const getInstructorProfile = async (req, res) => {
-  const instructorId = req.userId;
+  const instructorId = req.userID;
 
   try {
     const instructor = await LabIns.findById(instructorId);
